@@ -10,14 +10,15 @@ print(Date_Of_Birth)
 
 #---------------------solution for b ------------------------------#
 #The difference between intergers and floating point numbers in python is simply that integers 
-#do not have decimals in them, while floats/ floating point numbers do
+#are simply postitve and negative whole numbers, while floats/ floating point numbers are numbers that have a fractional part in them
+#they can also be defined as numbers that have decimals in them
 '''Exmaple of integer:
     1
     4000
     487384387
 
 Examples of floating point numbers
-    32.0
+    32.14e-10
     345.3443
     0.767346
     '''
@@ -27,11 +28,11 @@ a) Write a Python program that adds two numbers together and prints the result.
 b) Write a Python program that takes a number as input and multiplies it by 10. Print the result.'''
 
 #---------------------solution for a ------------------------------#
-def sum(x,y):
+def add(x,y):
     sum = x+y 
     print(sum)
 
-sum(x=float(input(' enter the first number')), y=float(input(' enter the second number')))
+add(x=float(input(' enter the first number')), y=float(input(' enter the second number')))
 
 #---------------------solution for b ------------------------------#
 def multiplier():
@@ -72,6 +73,7 @@ c) Create a dictionary ‘colleague_name’ storing all your colleague names. Hi
 numbers as their key. '''
 
 #---------------------solution for a ------------------------------#
+
 my_list = [1, 2, 3, 4, 5, 5.5, 6, 7.8, 8, 9, 10]
 for items in my_list:
     print(items, end='\n')
@@ -79,12 +81,11 @@ for items in my_list:
 #---------------------solution for b------------------------------#
 
 
-def list_sum():
-    list_values = list(input('Please enter a sequence of number values'))
-    sum = sum(list_values)
-    return sum
+def list_sum(list):
+    x = sum(list)
+    return x
 
-print(list_sum())
+print(list_sum([34,24,0,51,34, 43,34,4,34,34]))
 
 #---------------------solution for c------------------------------#
 
@@ -103,6 +104,9 @@ numbers in the list.'''
 
 #---------------------solution for a ------------------------------#
 def product(x, y, z):
+    x = float(x)
+    y = float(y)
+    z = float(z)
     '''this is a function that takes
     three numbers as arguments and
     returns their product'''
@@ -110,17 +114,23 @@ def product(x, y, z):
 
     return times
 
+product(3,3,33)
+
 #---------------------solution for b ------------------------------#
 
-def average(x = list(input('please enter a sequence of number values'))):
+def average(list ):
     '''this function calculates the
     average of all the values in a list
-    which is entered an argument when 
-    the functionm is being called'''
-    sum = sum(x)
-    length = len(x)
+    which is entered as an argument when 
+    the function is being called'''
+    
+    sum = sum(list)
+
+    length = len(list)
+
     avg = sum/length
 
+average([34,4,2,54,6,32,32,])
 '''6) Libraries and Modules
 a) Install and Import the "math" module and use its "sqrt" function to calculate the square root
 of a number.
@@ -145,11 +155,13 @@ print(x)
 
 import pywhatkit as py
 
+
 #---------------------solution for c ------------------------------#
 
 py.sendwhatmsg_instantly(
     phone_no = 'mr habeeblah',
     message= 'Good day sir',
+    wait_time= 15,
 )
 
 '''10) Give a feedback on this Python course, your instructor and this examination.'''
